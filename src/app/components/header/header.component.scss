@@ -1,0 +1,16 @@
+@import "variables";
+
+:host {
+  background: $primary;
+  color: $primary-contrast;
+  display: flex;
+
+  .link {
+    color: $primary-contrast;
+  }
+
+  .logo {
+    height: 4rem;
+    width: 4rem;
+  }
+}
