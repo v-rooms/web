@@ -4,13 +4,25 @@
   background: $primary;
   color: $primary-contrast;
   display: flex;
-
-  .link {
-    color: $primary-contrast;
-  }
+  align-items: center;
+  padding: 0 1rem;
 
   .logo {
+    color: $primary-contrast;
     height: 4rem;
-    width: 4rem;
+    width: 6rem;
+    display: flex;
+  }
+
+  .login {
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    margin-left: auto;
+  }
+
+  .icon-login, .icon-logo {
+    height: 100%;
+    width: 100%;
   }
 }

@@ -1,0 +1,9 @@
+<ul>
+	<li class="add"><span class="name">Создать видео комнату</span><mat-icon class="add_icon" svgIcon="plus_round"></mat-icon></li>
+	<li *ngFor="let videoList of videoList$ | async" [ngStyle]="{'background-image': 'url(' + videoList.preview + ')'}">
+		<div class="header">
+			<span class="name">{{videoList.name}}</span>
+			<span class="language">{{videoList.language}}</span>
+		</div>
+	</li>
+</ul>
