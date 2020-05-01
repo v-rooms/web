@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -19,15 +19,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@shared/*": ["app/shared/*"],
+      "@core/*": ["app/core/*"],
+      "@env/*": ["environments/*"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  },
-  "paths": {
-    "@Shared/*": ["app/shared/*"],
-    "@Core/*": ["app/core/*"],
-    "@Env/*": ["environments/*"]
   }
 }
