@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  url: 'http://localhost:8080/'
+  url: 'https://192.168.1.2:8443/',
+  ws: 'ws://192.168.1.2:8443/'
 };
