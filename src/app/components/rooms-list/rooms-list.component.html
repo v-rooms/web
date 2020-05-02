@@ -1,2 +1,2 @@
-<vr-room-create class="room"></vr-room-create>
+<vr-room-create *ngIf="user$ | async as user" [userId]="user.id" class="room"></vr-room-create>
 <vr-room *ngFor="let room of rooms$ | async" class="room" [room]="room" [routerLink]="[routing.rooms.fullPath, room.id]" [ngStyle]="{'background-image': 'url(' + room.preview + ')'}"></vr-room>

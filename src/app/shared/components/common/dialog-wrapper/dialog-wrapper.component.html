@@ -1,0 +1,14 @@
+<header>
+	<h2>{{name}}</h2>
+	<button color="primary" mat-icon-button mat-dialog-close class="icon-close"><mat-icon svgIcon="close"></mat-icon></button>
+</header>
+<main>
+	<ng-content></ng-content>
+</main>
+<footer>
+	<button *ngIf="cancelBtnName" class="cancel" mat-button mat-dialog-close>{{cancelBtnName}}</button>
+	<button *ngIf="okBtnName && !customOkClose" class="ok" mat-button mat-dialog-close="true" color="primary" (click)="okEvent.emit()">{{okBtnName}}</button>
+	<button *ngIf="okBtnName && customOkClose" class="ok" mat-button color="primary" (click)="okEvent.emit()">{{okBtnName}}</button>
+
+</footer>
+<input type="hidden" cdkFocusInitial>

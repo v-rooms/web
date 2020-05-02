@@ -18,6 +18,10 @@ export class RoomsService {
     return this.http.get<Room[]>(this.url).pipe(catchError(err => this.roomsCatchError));
   }
 
+  public createRoom(room: Room): Observable<void> {
+    return this.http.post<Room>(this.url, room);
+  }
+
   private get roomsCatchError(): Observable<any> {
     // mock data for remove
     return this.httpClient.get('assets/mocks/video-list.json');

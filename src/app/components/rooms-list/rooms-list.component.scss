@@ -5,20 +5,23 @@
   flex-wrap: wrap;
 
   .room {
-    height: 20vw;
-    width: 20vw;
+    height: 15vw;
+    width: 15vw;
+    min-width: 15rem;
+    min-height: 15rem;
     background-size: cover;
     background-position: 50%;
-    border-width: 4px;
+    border-width: 2px;
     border-color: $primary;
     border-radius: 10px;
     margin: 1vw;
-    color: white;
+    color: $primary;
+    background-color: $dark-light;
     transition: all ease-in-out 0.2s;
     cursor: pointer;
 
     &:hover {
-      box-shadow: 0 0 2rem rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 1rem rgba(255, 255, 255, 0.3);
     }
   }
 }

@@ -1,11 +1,13 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material.module';
+import { COMPONENTS } from '@shared/components';
+import { PIPES } from '@shared/pipes';
 
 @NgModule({
-  declarations: [],
+  declarations: [...COMPONENTS, ...PIPES],
   imports: [CommonModule, MaterialModule],
-  exports: [CommonModule, MaterialModule]
+  exports: [CommonModule, MaterialModule, ...COMPONENTS, ...PIPES]
 })
 export class SharedModule {
   public static forRoot(): ModuleWithProviders {

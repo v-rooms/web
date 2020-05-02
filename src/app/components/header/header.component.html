@@ -1,2 +1,8 @@
 <a class="logo" routerLink="/"><mat-icon class="icon-logo" svgIcon="logo"></mat-icon></a>
-<a class="login" (click)="auth()"><mat-icon class="icon-login" svgIcon="login"></mat-icon></a>
+
+<ng-container *ngIf="user$ | async as user else notUser">
+	<span class="name">{{user.name}}</span>
+</ng-container>
+<ng-template #notUser>
+	<button mat-icon-button (click)="auth()"><mat-icon class="icon-login" svgIcon="login"></mat-icon></button>
+</ng-template>

@@ -1,0 +1,10 @@
+:host {
+  textarea {
+    resize: none;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,14 @@
+<vr-dialog-wrapper name="Создать комнату" okBtnName="Создать" cancelBtnName="Отменить" [customOkClose]="true" (okEvent)="createRoom()">
+	<form [formGroup]="form">
+		<mat-form-field appearance="outline"><mat-label>Название</mat-label><input formControlName="name" type="text" matInput></mat-form-field>
+		<mat-form-field appearance="outline"><mat-label>Описание</mat-label><textarea formControlName="description" rows="3" matInput></textarea></mat-form-field>
+
+		<mat-form-field appearance="outline">
+			<mat-label>Тип комнаты</mat-label>
+			<mat-select formControlName="type">
+				<mat-option *ngFor="let room of RoomType | enumToArray" [value]="room">{{room | roomType}}</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field appearance="outline"><mat-label>Ссылка на превью</mat-label><input formControlName="preview" type="text" matInput></mat-form-field>
+	</form>
+</vr-dialog-wrapper>

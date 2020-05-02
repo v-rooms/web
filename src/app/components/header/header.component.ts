@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@core/services/auth.service';
+import { Observable } from 'rxjs';
+import { User } from '@core/models/user.model';
 
 @Component({
   selector: 'vr-header',
@@ -7,13 +9,15 @@ import { AuthService } from '@core/services/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public user$: Observable<User>;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.user$ = this.authService.user$;
   }
 
   public auth(): void {
-    this.authService.auth().subscribe(el => console.log(el));
+    this.authService.auth().subscribe();
   }
 }

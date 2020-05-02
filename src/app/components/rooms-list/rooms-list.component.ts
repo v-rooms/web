@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { Room } from '@core/models/room.model';
 import { RoomsService } from '@core/services/rooms.service';
 import { RoutingConfig } from '@shared/routing-config';
+import { AuthService } from '@core/services/auth.service';
+import { User } from '@core/models/user.model';
 
 @Component({
   selector: 'vr-rooms-list',
@@ -12,10 +14,12 @@ import { RoutingConfig } from '@shared/routing-config';
 export class RoomsListComponent implements OnInit {
   public rooms$: Observable<Room[]>
   public routing = RoutingConfig.routes;
+  public user$: Observable<User>;
 
-  constructor(private roomsService: RoomsService) { }
+  constructor(private roomsService: RoomsService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.rooms$ = this.roomsService.rooms;
+    this.user$ = this.authService.user$;
   }
 }

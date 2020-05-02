@@ -1,13 +1,19 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { WebsocketModule } from '@core/modules/websocket';
+import { environment } from '@env/environment';
 
 @NgModule({
   declarations: [],
   imports: [
-    HttpClientModule
+    HttpClientModule,
+    WebsocketModule.config({
+      url: environment.ws
+    })
   ],
   exports: [
-    HttpClientModule
+    HttpClientModule,
+    WebsocketModule
   ]
 })
 export class CoreModule {
