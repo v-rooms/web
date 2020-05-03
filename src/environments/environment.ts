@@ -5,7 +5,13 @@
 export const environment = {
   production: false,
   url: 'https://localhost:8443/',
-  ws: 'ws://localhost:8443/'
+  ws: {
+    url: 'https://localhost:8443/socket',
+    rooms: {
+      fTopic: '/topic/rooms',
+      bTopic: '/app/rooms'
+    }
+  }
 };
 
 /*

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Room } from '@core/models/room.model';
 import { RoomsService } from '@core/services/rooms.service';
 import { RoutingConfig } from '@shared/routing-config';
 import { AuthService } from '@core/services/auth.service';
 import { User } from '@core/models/user.model';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'vr-rooms-list',
@@ -19,7 +20,7 @@ export class RoomsListComponent implements OnInit {
   constructor(private roomsService: RoomsService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.rooms$ = this.roomsService.rooms;
+    this.rooms$ = this.roomsService.rooms$;
     this.user$ = this.authService.user$;
   }
 }
